@@ -37,10 +37,13 @@ func NewTorrentService(
 	realtime *handler.RealtimeHandler,
 ) (*TorrentService, error) {
 
-	client, err := torrent.NewClient(&torrent.ClientConfig{
-		DataDir: conf.StoragePath,
-	})
+	cfg := torrent.NewDefaultClientConfig()
+	cfg.DataDir = conf.StoragePath
+	cfg.DisableIPv6 = true
+	cfg.NoUpload = false
+	cfg.Seed = true
 
+	client, err := torrent.NewClient(cfg)
 	if err != nil {
 		return nil, err
 	}

@@ -1,0 +1,49 @@
+### Get fs
+GET http://{{host}}/api/fs/list?path=/movies
+Authorization: Bearer {{token}}
+
+### Create folder
+POST http://{{host}}/api/fs/mkdir
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "path": "/movies"
+}
+
+### File Stat
+GET http://{{host}}/api/fs/stat?path=/movies/shika-12.mkv
+Authorization: Bearer {{token}}
+
+### Delete folder
+DELETE http://{{host}}/api/fs/delete
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "path": "/movies"
+}
+
+### Move
+POST http://{{host}}/api/fs/move
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "source": "/movies/aot.mkv",
+  "destination": "/movies/attack_on_titan.mkv"
+}
+
+### Copy
+POST http://{{host}}/api/fs/copy
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "source": "/movies/aot.mkv",
+  "destination": "/movies/aot_copy.mkv"
+}
+
+
+
+

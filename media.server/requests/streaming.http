@@ -1,0 +1,5 @@
+### Stream
+GET http://{{host}}/api/stream/video?path=/movies/shika-12.mkv
+
+### Download
+GET http://{{host}}/api/stream/download?path=/movies/shika-12.mkv

@@ -1,0 +1,7 @@
+### List jobs
+GET http://{{host}}/api/jobs
+Authorization: Bearer {{token}}
+
+### Get job
+GET http://{{host}}/api/jobs/123
+Authorization: Bearer {{token}}

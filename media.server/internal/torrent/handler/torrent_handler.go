@@ -61,3 +61,36 @@ func (h *TorrentHandler) AddTorrent(
 		torrent,
 	)
 }
+
+func (h *TorrentHandler) RemoveTorrent(
+	c *gin.Context,
+) {
+	id := c.Param("id")
+
+	if id == "" {
+		apperrors.Respond(
+			c,
+			apperrors.New(
+				http.StatusBadRequest,
+				"VALIDATION_ERROR",
+				"torrent id is required",
+			),
+		)
+		return
+	}
+
+	err := h.Service.RemoveTorrent(
+		c.Request.Context(),
+		id,
+	)
+	if err != nil {
+		apperrors.Respond(c, err)
+		return
+	}
+
+	response.Success(
+		c,
+		http.StatusOK,
+		gin.H{"id": id},
+	)
+}

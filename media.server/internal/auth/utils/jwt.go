@@ -39,3 +39,31 @@ func GenerateJWT(
 
 	return token.SignedString(JWTSecret)
 }
+
+func ParseJWT(
+	tokenString string,
+) (*JWTClaims, error) {
+
+	token, err := jwt.ParseWithClaims(
+		tokenString,
+		&JWTClaims{},
+		func(token *jwt.Token) (interface{}, error) {
+			return JWTSecret, nil
+		},
+	)
+
+	if err != nil {
+		return nil, err
+	}
+
+	if !token.Valid {
+		return nil, jwt.ErrTokenInvalidClaims
+	}
+
+	claims, ok := token.Claims.(*JWTClaims)
+	if !ok {
+		return nil, jwt.ErrTokenInvalidClaims
+	}
+
+	return claims, nil
+}

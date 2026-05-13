@@ -1,5 +1,5 @@
 ### Get fs
-GET http://{{host}}/api/fs/list?path=/movies
+GET http://{{host}}/api/fs/list?path=/torrents
 Authorization: Bearer {{token}}
 
 ### Create folder

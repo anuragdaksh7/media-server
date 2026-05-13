@@ -54,3 +54,20 @@ func (m *TorrentManager) List() []*model.Torrent {
 
 	return result
 }
+
+func (m *TorrentManager) Remove(
+	id string,
+) (*model.Torrent, bool) {
+
+	m.mu.Lock()
+	defer m.mu.Unlock()
+
+	torrent, exists := m.torrents[id]
+	if !exists {
+		return nil, false
+	}
+
+	delete(m.torrents, id)
+
+	return torrent, true
+}

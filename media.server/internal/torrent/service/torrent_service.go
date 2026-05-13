@@ -8,6 +8,8 @@ import (
 	"fileserver/internal/torrent/dto"
 	"fileserver/internal/torrent/manager"
 	"fileserver/internal/torrent/model"
+	apperrors "fileserver/pkg/errors"
+	"net/http"
 	"time"
 
 	"github.com/anacrolix/torrent"
@@ -37,10 +39,13 @@ func NewTorrentService(
 	realtime *handler.RealtimeHandler,
 ) (*TorrentService, error) {
 
-	client, err := torrent.NewClient(&torrent.ClientConfig{
-		DataDir: conf.StoragePath,
-	})
+	cfg := torrent.NewDefaultClientConfig()
+	cfg.DataDir = "/home/anurag/downloads/torrents"
+	cfg.DisableIPv6 = true
+	cfg.NoUpload = false
+	cfg.Seed = true
 
+	client, err := torrent.NewClient(cfg)
 	if err != nil {
 		return nil, err
 	}
@@ -78,6 +83,28 @@ func (s *TorrentService) AddTorrent(
 	go s.download(torrentModel)
 
 	return torrentModel, nil
+}
+
+func (s *TorrentService) RemoveTorrent(
+	_ context.Context,
+	id string,
+) error {
+	_, exists := s.Manager.Remove(id)
+	if !exists {
+		return apperrors.NewWithDetails(
+			http.StatusNotFound,
+			"TORRENT_NOT_FOUND",
+			"torrent not found",
+			map[string]string{"id": id},
+		)
+	}
+
+	s.Realtime.BroadcastJSON(
+		"torrent.removed",
+		map[string]string{"id": id},
+	)
+
+	return nil
 }
 
 func (s *TorrentService) download(
@@ -131,7 +158,7 @@ func (s *TorrentService) download(
 		)
 
 		s.Realtime.BroadcastJSON(
-			"torrent_progress",
+			"torrent.progress",
 			torrentModel,
 		)
 
@@ -142,7 +169,7 @@ func (s *TorrentService) download(
 			torrentModel.Status = model.TorrentCompleted
 
 			s.Realtime.BroadcastJSON(
-				"torrent_completed",
+				"torrent.completed",
 				torrentModel,
 			)
 

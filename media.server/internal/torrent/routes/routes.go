@@ -23,5 +23,10 @@ func RegisterTorrentRoutes(
 			"/add",
 			handler.AddTorrent,
 		)
+
+		torrent.DELETE(
+			"/:id",
+			handler.RemoveTorrent,
+		)
 	}
 }

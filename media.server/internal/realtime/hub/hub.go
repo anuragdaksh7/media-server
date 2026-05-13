@@ -60,7 +60,7 @@ func (h *Hub) Run() {
 
 		case message := <-h.broadcast:
 
-			h.mu.RLock()
+			h.mu.Lock()
 
 			for _, client := range h.clients {
 
@@ -76,7 +76,7 @@ func (h *Hub) Run() {
 				}
 			}
 
-			h.mu.RUnlock()
+			h.mu.Unlock()
 		}
 	}
 }

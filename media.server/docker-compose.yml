@@ -47,6 +47,8 @@ services:
     image: nginx:latest
     container_name: fileserver-nginx
     restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     ports:
       - "80:80"
     volumes:

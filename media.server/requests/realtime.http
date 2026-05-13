@@ -1,4 +1,4 @@
 ### Connect WebSocket
-WEBSOCKET ws://{{host}}/api/realtime/ws
+WEBSOCKET ws://{{host}}/api/realtime/ws?token={{token}}
 
 === wait-for-server

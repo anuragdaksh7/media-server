@@ -31,7 +31,9 @@ import (
 	uploadService "fileserver/internal/upload/service"
 	"fileserver/logger"
 	"log"
+	"time"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -50,6 +52,7 @@ func main() {
 	logger.InitLogger(conf)
 
 	storageProvider := provider.NewLocalProvider(conf.StoragePath)
+	tManager := torrentManager.NewTorrentManager()
 
 	hub := realtimeHub.NewHub()
 
@@ -57,13 +60,13 @@ func main() {
 
 	realtimeHdl := realtimeHandler.NewRealtimeHandler(
 		hub,
+		tManager,
 	)
 
 	database := db.InitDB()
 
 	authRepo := repository.NewAuthRepository(database)
 	jobsManager := jobManager.NewJobManager()
-	tManager := torrentManager.NewTorrentManager()
 
 	authService := service.NewAuthService(authRepo)
 	filesystemService := fsService.NewFilesystemService(storageProvider)
@@ -108,6 +111,32 @@ func main() {
 		middleware.Recovery(),
 		middleware.RequestLogger(),
 	)
+
+	r.Use(cors.New(cors.Config{
+		AllowOrigins: []string{
+			"http://localhost:3000",
+			"http://localhost:8080",
+			"http://localhost:5173",
+		},
+		AllowMethods: []string{
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"OPTIONS",
+		},
+		AllowHeaders: []string{
+			"Origin",
+			"Content-Type",
+			"Authorization",
+		},
+		ExposeHeaders: []string{
+			"Content-Length",
+		},
+		AllowCredentials: true,
+		MaxAge:           12 * time.Hour,
+	}))
 
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{"message": "Welcome to the File Server API"})

@@ -6,7 +6,6 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/golang-jwt/jwt/v5"
 )
 
 func JWTMiddleware() gin.HandlerFunc {
@@ -30,15 +29,8 @@ func JWTMiddleware() gin.HandlerFunc {
 			"Bearer ",
 		)
 
-		token, err := jwt.ParseWithClaims(
-			tokenString,
-			&utils.JWTClaims{},
-			func(token *jwt.Token) (interface{}, error) {
-				return utils.JWTSecret, nil
-			},
-		)
-
-		if err != nil || !token.Valid {
+		claims, err := utils.ParseJWT(tokenString)
+		if err != nil {
 			c.AbortWithStatusJSON(
 				http.StatusUnauthorized,
 				gin.H{
@@ -47,8 +39,6 @@ func JWTMiddleware() gin.HandlerFunc {
 			)
 			return
 		}
-
-		claims := token.Claims.(*utils.JWTClaims)
 
 		c.Set("user_id", claims.UserID)
 		c.Set("role", claims.Role)

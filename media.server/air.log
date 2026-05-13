@@ -1,0 +1,223 @@
+nohup: ignoring input
+[warning] build.bin is deprecated; set build.entrypoint instead
+
+  __    _   ___  
+ / /\  | | | |_) 
+/_/--\ |_| |_| \_ v1.65.1, built with Go go1.25.2
+
+[00:21:59] watching .
+[00:21:59] watching cmd
+[00:21:59] watching cmd/api
+[00:21:59] watching infrastructure
+[00:21:59] watching infrastructure/cache
+[00:21:59] watching internal
+[00:21:59] watching internal/auth
+[00:21:59] watching internal/auth/dto
+[00:21:59] watching internal/auth/handler
+[00:21:59] watching internal/auth/middleware
+[00:21:59] watching internal/auth/model
+[00:21:59] watching internal/auth/repository
+[00:21:59] watching internal/auth/service
+[00:21:59] watching internal/auth/utils
+[00:21:59] watching internal/config
+[00:21:59] watching internal/db
+[00:21:59] watching internal/filesystem
+[00:21:59] watching internal/filesystem/dto
+[00:21:59] watching internal/filesystem/handler
+[00:21:59] watching internal/filesystem/routes
+[00:21:59] watching internal/filesystem/service
+[00:21:59] watching internal/jobs
+[00:21:59] watching internal/jobs/handler
+[00:21:59] watching internal/jobs/locks
+[00:21:59] watching internal/jobs/manager
+[00:21:59] watching internal/jobs/model
+[00:21:59] watching internal/jobs/routes
+[00:21:59] watching internal/jobs/service
+[00:21:59] watching internal/middleware
+[00:21:59] watching internal/realtime
+[00:21:59] watching internal/realtime/client
+[00:21:59] watching internal/realtime/handler
+[00:21:59] watching internal/realtime/hub
+[00:21:59] watching internal/realtime/routes
+[00:21:59] watching internal/realtime/ws
+[00:21:59] watching internal/storage
+[00:21:59] watching internal/storage/provider
+[00:21:59] watching internal/streaming
+[00:21:59] watching internal/streaming/dto
+[00:21:59] watching internal/streaming/handler
+[00:21:59] watching internal/streaming/routes
+[00:21:59] watching internal/streaming/service
+[00:21:59] watching internal/torrent
+[00:21:59] watching internal/torrent/dto
+[00:21:59] watching internal/torrent/handler
+[00:21:59] watching internal/torrent/manager
+[00:21:59] watching internal/torrent/model
+[00:21:59] watching internal/torrent/routes
+[00:21:59] watching internal/torrent/service
+[00:21:59] watching internal/upload
+[00:21:59] watching internal/upload/dto
+[00:21:59] watching internal/upload/handler
+[00:21:59] watching internal/upload/model
+[00:21:59] watching internal/upload/routes
+[00:21:59] watching internal/upload/service
+[00:21:59] watching logger
+[00:21:59] watching nginx
+[00:21:59] watching pkg
+[00:21:59] watching pkg/errors
+[00:21:59] watching pkg/response
+[00:21:59] watching requests
+[00:21:59] !exclude tmp
+[00:21:59] building...
+[00:22:04] running...
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> main.main.func1 (5 handlers)
+[GIN-debug] POST   /auth/register            --> fileserver/internal/auth/handler.(*AuthHandler).Register-fm (5 handlers)
+[GIN-debug] POST   /auth/login               --> fileserver/internal/auth/handler.(*AuthHandler).Login-fm (5 handlers)
+[GIN-debug] GET    /api/me                   --> main.main.func2 (6 handlers)
+[GIN-debug] GET    /api/fs/list              --> fileserver/internal/filesystem/handler.(*FilesystemHandler).List-fm (7 handlers)
+[GIN-debug] GET    /api/fs/stat              --> fileserver/internal/filesystem/handler.(*FilesystemHandler).Stat-fm (7 handlers)
+[GIN-debug] POST   /api/fs/mkdir             --> fileserver/internal/filesystem/handler.(*FilesystemHandler).Mkdir-fm (7 handlers)
+[GIN-debug] DELETE /api/fs/delete            --> fileserver/internal/filesystem/handler.(*FilesystemHandler).Delete-fm (7 handlers)
+[GIN-debug] POST   /api/fs/move              --> fileserver/internal/filesystem/handler.(*FilesystemHandler).Move-fm (7 handlers)
+[GIN-debug] POST   /api/fs/copy              --> fileserver/internal/filesystem/handler.(*FilesystemHandler).Copy-fm (7 handlers)
+[GIN-debug] GET    /api/stream/video         --> fileserver/internal/streaming/handler.(*StreamingHandler).Stream-fm (5 handlers)
+[GIN-debug] GET    /api/stream/download      --> fileserver/internal/streaming/handler.(*StreamingHandler).Download-fm (5 handlers)
+[GIN-debug] POST   /api/upload/file          --> fileserver/internal/upload/handler.(*UploadHandler).Upload-fm (7 handlers)
+[GIN-debug] GET    /api/realtime/ws          --> fileserver/internal/realtime/handler.(*RealtimeHandler).WebSocket-fm (5 handlers)
+[GIN-debug] GET    /api/jobs                 --> fileserver/internal/jobs/handler.(*JobHandler).ListJobs-fm (6 handlers)
+[GIN-debug] GET    /api/jobs/:id             --> fileserver/internal/jobs/handler.(*JobHandler).GetJob-fm (6 handlers)
+[GIN-debug] POST   /api/torrent/add          --> fileserver/internal/torrent/handler.(*TorrentHandler).AddTorrent-fm (6 handlers)
+[GIN-debug] DELETE /api/torrent/:id          --> fileserver/internal/torrent/handler.(*TorrentHandler).RemoveTorrent-fm (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://github.com/gin-gonic/gin/blob/master/docs/doc.md#dont-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+2026/05/14 00:22:05 INFO http request request_id=fc0931d2-d59e-418f-8b7b-53ffcd987997 method=GET path=/api/realtime/ws status=400 latency=335.629µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:22:10 INFO http request request_id=3ccb7686-78e0-4511-932d-453354ad6d93 method=GET path=/api/realtime/ws status=400 latency=177.025µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:22:16 INFO http request request_id=fbe71b45-7346-4288-a5bf-e5bf6fa74bfc method=GET path=/api/realtime/ws status=400 latency=64.613µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:22:22 INFO http request request_id=dddd04b7-97eb-42a9-a605-6f89ada08036 method=GET path=/api/realtime/ws status=400 latency=107.629µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:22:29 INFO http request request_id=27f30c04-e063-4552-9e24-f67624cec2b6 method=GET path=/api/realtime/ws status=400 latency=146.713µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:22:35 INFO http request request_id=bf4fb82e-83cd-440a-b1be-51e9dce4acf7 method=GET path=/api/realtime/ws status=400 latency=198.858µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:22:43 INFO http request request_id=1b0e5171-9e91-49fd-a102-968d51aff338 method=GET path=/api/realtime/ws status=400 latency=201.756µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:22:51 INFO http request request_id=71927756-b8b9-402f-a1e6-c83b0195ecbe method=GET path=/api/realtime/ws status=400 latency=152.817µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:22:57 INFO http request request_id=7de070a6-0792-44e8-9bf3-2425b3d76fe3 method=GET path=/api/realtime/ws status=400 latency=134.344µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:23:05 INFO http request request_id=f2d594f8-1b78-48d4-b91c-5cc4ab9d315a method=GET path=/api/realtime/ws status=400 latency=164.807µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:23:12 INFO http request request_id=d9c3582f-f8be-4a74-ba9a-62f9880eab98 method=GET path=/api/realtime/ws status=400 latency=155.842µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:23:17 INFO http request request_id=59f7fe13-7956-4f1d-a24f-e8922b64b68c method=GET path=/api/realtime/ws status=400 latency=133.778µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:23:24 INFO http request request_id=557cc2cf-da7b-40b3-9fdb-c115c1a0d7a6 method=GET path=/api/realtime/ws status=400 latency=149.562µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:23:30 INFO http request request_id=8baff6ba-9667-4ea5-8f25-70a3ab2b93a0 method=GET path=/api/realtime/ws status=400 latency=167.732µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:23:35 INFO http request request_id=a91bafa8-8029-4acc-9369-916e2760347e method=GET path=/api/realtime/ws status=400 latency=141.345µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:23:36 INFO http request request_id=66e8d3a5-ac68-438d-a908-3055bfd6b6f6 method=OPTIONS path=/api/torrent/add status=204 latency=41.187µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:23:36 INFO http request request_id=7591cfc0-154b-4d32-a5bd-152d27ec6dc4 method=POST path=/api/torrent/add status=201 latency=505.258µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:23:40 INFO http request request_id=d2b49852-7526-45cf-894e-b7469feb33ee method=GET path=/api/realtime/ws status=400 latency=651.27µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:23:47 INFO http request request_id=9e7e7a92-6d25-4bb9-be56-519ee9a691d4 method=GET path=/api/realtime/ws status=400 latency=117.873µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:23:52 INFO http request request_id=60c2d0b9-4e5f-49dc-97bd-7afd37b6be5c method=GET path=/api/realtime/ws status=400 latency=154.774µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:23:58 INFO http request request_id=de131c06-bb3e-4c6b-9fb2-9769e1d148fc method=GET path=/api/realtime/ws status=400 latency=123.333µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:24:01 INFO http request request_id=04390f2a-d74e-408f-b930-404bb90ba6d9 method=GET path=/api/jobs status=200 latency=431.973µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:24:05 INFO http request request_id=6552a56a-ffae-44bf-8dbc-aa29d2f63ec0 method=GET path=/api/jobs status=200 latency=142.835µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:24:05 INFO http request request_id=96740e32-67dd-47be-8a18-1f9b15e7adf0 method=GET path=/api/realtime/ws status=400 latency=139.351µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:24:09 INFO http request request_id=09db5d0f-839a-4f1a-9e4f-bfd3f0f8e066 method=GET path=/api/jobs status=200 latency=221.356µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:24:11 INFO http request request_id=ca59a5c2-5e19-4fee-a8eb-bccb83389028 method=GET path=/api/fs/list status=200 latency=5.902299ms ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:24:11 INFO http request request_id=8c679720-4363-4433-9872-1f815006a2a4 method=GET path=/api/fs/list status=200 latency=313.705µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:24:12 INFO http request request_id=157ce6e7-6b96-41a8-abbd-6100bc1ac7ec method=GET path=/api/fs/list status=200 latency=340.637µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:24:13 INFO http request request_id=4fd73e60-550f-44fe-bc6c-ae8761f46c6b method=GET path=/api/realtime/ws status=400 latency=829.79µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:24:16 INFO http request request_id=c66a625e-946f-4186-bcc3-82241062578a method=OPTIONS path=/api/fs/list status=204 latency=18.049µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:24:17 INFO http request request_id=3bd742f7-164e-47ec-8c56-dacda3a209d5 method=GET path=/api/fs/list status=200 latency=1.485127ms ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:24:19 INFO http request request_id=17f7a1d5-4b51-40a6-9643-41bbda480b98 method=GET path=/api/realtime/ws status=400 latency=121.253µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:24:25 INFO http request request_id=696d64fb-6cd7-4e0c-95a9-49d17e7f9db7 method=GET path=/api/realtime/ws status=400 latency=124.915µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:24:29 INFO http request request_id=eb5216d0-f98d-4217-aff5-6627a586f014 method=GET path=/api/stream/download status=206 latency=541.146332ms ip= user_agent=libmpv user_id=""
+2026/05/14 00:24:29 INFO http request request_id=418823bc-5b3d-494a-af51-230f56af39d8 method=GET path=/api/stream/download status=206 latency=89.763109ms ip= user_agent=libmpv user_id=""
+2026/05/14 00:24:29 INFO http request request_id=a36bf30e-21c3-4848-9ffc-20cb0d12195b method=GET path=/api/stream/download status=206 latency=389.042µs ip= user_agent=libmpv user_id=""
+2026/05/14 00:24:30 INFO http request request_id=26d0faf6-d6b9-411a-a9ca-ae8ec37f267f method=GET path=/api/realtime/ws status=400 latency=86.754µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:24:35 INFO http request request_id=1c8bfaec-0e55-4d05-8bd2-02848b9c043c method=GET path=/api/stream/download status=206 latency=5.477529876s ip= user_agent=libmpv user_id=""
+2026/05/14 00:24:35 INFO http request request_id=897755a4-c957-41e9-bed4-b6a683fbabe0 method=GET path=/api/realtime/ws status=400 latency=117.805µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:24:41 INFO http request request_id=51413ec7-3aaa-4cea-acae-212ad184f053 method=GET path=/api/stream/download status=200 latency=2.94443878s ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:24:43 INFO http request request_id=4179fac9-2325-4256-adf9-3a327592ac5a method=GET path=/api/realtime/ws status=400 latency=177.251µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:24:51 INFO http request request_id=b80ebaaf-9b17-4cab-8e97-41b6e30fac65 method=GET path=/api/realtime/ws status=400 latency=108.082µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:24:56 INFO http request request_id=e4764437-a254-492a-ba4a-38705420ac9e method=GET path=/api/realtime/ws status=400 latency=130.539µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:25:03 INFO http request request_id=db1101ff-c1e3-4dda-8f35-cdc0b9e038d9 method=GET path=/api/realtime/ws status=400 latency=102.447µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:25:08 INFO http request request_id=47a14666-4d44-40bd-a7d6-8028c88680a2 method=GET path=/api/realtime/ws status=400 latency=225.368µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:25:14 INFO http request request_id=e785845b-3d7e-403b-9161-bfd27b4a9e0d method=GET path=/api/realtime/ws status=400 latency=105.584µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:25:19 INFO http request request_id=39516f01-b551-42d5-b5e0-5b37be625f3e method=GET path=/api/realtime/ws status=400 latency=63.112µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:25:23 INFO http request request_id=c594a6b3-ae28-4118-9de8-a303e76a284c method=GET path=/api/realtime/ws status=400 latency=108.659µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:25:26 INFO http request request_id=0262e17f-a60d-44de-8fbf-de21c3fc8b9c method=GET path=/api/fs/list status=200 latency=168.256µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:25:28 INFO http request request_id=a0719692-ecbf-4cb3-ab0c-92455eb8c204 method=GET path=/api/fs/list status=200 latency=291.853µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:25:29 INFO http request request_id=468d81c9-4e6c-4caa-ad34-e7b1ea978979 method=GET path=/api/fs/list status=200 latency=323.109µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:25:30 INFO http request request_id=ee715ae6-b20e-43a6-9610-7c737e4f776d method=GET path=/api/realtime/ws status=400 latency=85.173µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:25:36 INFO http request request_id=c01e90c6-b802-4e38-a406-d83c79e25514 method=GET path=/api/realtime/ws status=400 latency=122.549µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:25:42 INFO http request request_id=dee1484a-278f-49d0-8d5b-69db2aeb0421 method=GET path=/api/realtime/ws status=400 latency=103.918µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:25:48 INFO http request request_id=0c7c376a-4ea3-4f46-82e1-00a8f27ccc8b method=GET path=/api/realtime/ws status=400 latency=112.646µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:25:53 INFO http request request_id=59463b90-a9f8-4e19-8b0b-a79c7660ba21 method=GET path=/api/realtime/ws status=400 latency=99.595µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:25:59 INFO http request request_id=f13f4c17-363e-4d73-a910-cc200e2ba127 method=GET path=/api/realtime/ws status=400 latency=156.216µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:26:07 INFO http request request_id=aa24def9-e0ec-443c-bb15-1043943b35a5 method=GET path=/api/realtime/ws status=400 latency=100.022µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:26:13 INFO http request request_id=9525710c-e74a-4a18-94fe-dba7b735defa method=GET path=/api/realtime/ws status=400 latency=121.922µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:26:22 INFO http request request_id=edac9ec6-df87-4ed9-a3ea-ffa0ba4df50f method=GET path=/api/realtime/ws status=400 latency=86.413µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:26:30 INFO http request request_id=d55f6a33-e5a3-44d3-839d-f2312b4d5d96 method=GET path=/api/realtime/ws status=400 latency=94.711µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:26:36 INFO http request request_id=7e323822-61a5-4901-8904-af7e01787866 method=GET path=/api/realtime/ws status=400 latency=149.421µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:26:41 INFO http request request_id=2e254884-7785-4301-91a0-74a2e6c9c674 method=GET path=/api/realtime/ws status=400 latency=69.368µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:26:48 INFO http request request_id=824c7f9d-8882-4fa9-92e4-b9121afc1190 method=GET path=/api/realtime/ws status=400 latency=74.415µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:26:54 INFO http request request_id=53ce14ae-c860-4e23-a39b-fa82526be47a method=GET path=/api/realtime/ws status=400 latency=203.784µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:26:58 INFO http request request_id=00539ea3-3f8d-41b5-9aec-17f304759e01 method=GET path=/api/realtime/ws status=400 latency=117.173µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:06 INFO http request request_id=ff601d3a-5e89-4332-88b8-7d4343130c7d method=GET path=/api/realtime/ws status=400 latency=86.745µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:12 INFO http request request_id=156314fa-20f5-405d-a5db-ea6ca15c6a43 method=GET path=/api/realtime/ws status=400 latency=216.813µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:20 INFO http request request_id=4fde554e-7bc7-4e0c-8798-bfe72476e585 method=GET path=/api/realtime/ws status=400 latency=147.6µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:27 INFO http request request_id=49b703af-0a88-400c-9f5f-f6f8c5d74b1c method=GET path=/api/realtime/ws status=400 latency=71.232µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:27 INFO http request request_id=fda962e5-5a93-4a9b-b2f5-2cb73c207e6f method=GET path=/api/fs/list status=200 latency=209.466µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:27:34 INFO http request request_id=8d00918f-d2cb-493c-8bf2-26b4a261dfdf method=GET path=/api/stream/video status=200 latency=51.264922ms ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:35 INFO http request request_id=9d560dc4-5f24-4956-bdbe-8771b77fa8b8 method=GET path=/api/realtime/ws status=400 latency=125.946µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:35 INFO http request request_id=16570691-329d-4bc3-9aa0-6f2b5b439470 method=GET path=/api/stream/video status=206 latency=290.233311ms ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:35 INFO http request request_id=5b637e70-a522-4d31-b4ec-d4d4fadd29b7 method=GET path=/api/stream/video status=206 latency=612.598µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:35 INFO http request request_id=a42a84ce-a01d-4c42-9efb-0afe5a926ad9 method=GET path=/api/stream/video status=206 latency=443.021349ms ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:35 INFO http request request_id=b3a88e13-23b1-4923-95a7-3061f7b306a1 method=GET path=/api/stream/video status=206 latency=5.695323ms ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:35 INFO http request request_id=e379e7d8-8458-4334-8512-a13f43ab7713 method=GET path=/api/stream/video status=206 latency=33.681738ms ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:38 INFO http request request_id=4ef2bf1b-5745-42ea-b001-e70cf9a50315 method=GET path=/api/stream/video status=206 latency=147.824654ms ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:40 INFO http request request_id=f163f5c4-259e-4e2c-a099-e0df5c89c05c method=GET path=/api/stream/video status=206 latency=1.37376187s ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:43 INFO http request request_id=ae0ef287-a5c0-44bc-804a-d1896d29ddf0 method=GET path=/api/realtime/ws status=400 latency=194.076µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:45 INFO http request request_id=e5db5530-f0eb-403c-8491-d466867e9cde method=GET path=/api/stream/video status=206 latency=1.049705ms ip= user_agent=libmpv user_id=""
+2026/05/14 00:27:45 INFO http request request_id=2e1c5530-d2ba-4a8e-8e82-61faa463a157 method=GET path=/api/stream/video status=206 latency=234.810095ms ip= user_agent=libmpv user_id=""
+2026/05/14 00:27:50 INFO http request request_id=d7f6f1fc-1177-4a21-8238-62d81e0a8ea2 method=GET path=/api/realtime/ws status=400 latency=112.816µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:27:50 INFO http request request_id=d4d58112-41f2-4c29-9044-0340d4ecec27 method=GET path=/api/stream/video status=206 latency=5.368593793s ip= user_agent=libmpv user_id=""
+2026/05/14 00:27:50 INFO http request request_id=0742b8f6-0e5f-4db3-9fdf-4487d4560627 method=GET path=/api/stream/video status=206 latency=218.792612ms ip= user_agent=libmpv user_id=""
+2026/05/14 00:27:55 INFO http request request_id=de11dcbc-e029-4f81-a3e8-2dfd2416cfe1 method=GET path=/api/realtime/ws status=400 latency=143.909µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:28:01 INFO http request request_id=eb141763-4921-477c-a49a-90b0ddbe7b30 method=GET path=/api/realtime/ws status=400 latency=66.386µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:28:08 INFO http request request_id=668d9c14-36a5-430c-91fb-dd9bcda2b101 method=GET path=/api/realtime/ws status=400 latency=155.295µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:28:15 INFO http request request_id=8f42a2d5-7f74-46e6-8938-59b314ed1981 method=GET path=/api/realtime/ws status=400 latency=98.639µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:28:21 INFO http request request_id=95f9eb67-5cd9-4451-a6b3-2f7ac49712be method=GET path=/api/realtime/ws status=400 latency=70.627µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:28:29 INFO http request request_id=1e7c6e57-14e4-48f8-82b3-91b121bf4238 method=GET path=/api/realtime/ws status=400 latency=112.433µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:28:37 INFO http request request_id=5d7bbd6c-3cc9-4c7a-9d5b-eea8645c5fab method=GET path=/api/realtime/ws status=400 latency=117.818µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:28:45 INFO http request request_id=afa6a48d-7e3c-49fb-9242-e3c97fe79904 method=GET path=/api/realtime/ws status=400 latency=112.76µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:28:51 INFO http request request_id=1de959e4-9f80-46d2-9d63-05a0395ed85f method=GET path=/api/realtime/ws status=400 latency=103.058µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:28:55 INFO http request request_id=f4555fc6-a2f8-43fe-ada2-24a1ac0576d5 method=GET path=/api/realtime/ws status=400 latency=68.76µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:29:01 INFO http request request_id=8cbd2eee-a0ed-4006-b03d-c5d2146ae387 method=GET path=/api/realtime/ws status=400 latency=114.704µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:29:07 INFO http request request_id=a6015bfd-547f-4d46-bb6e-fc1d00da195e method=GET path=/api/realtime/ws status=400 latency=102.035µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:29:12 INFO http request request_id=b63cadab-6ea5-4616-ae27-2e63bb995b65 method=GET path=/api/stream/video status=206 latency=1m22.057465736s ip= user_agent=libmpv user_id=""
+2026/05/14 00:29:14 INFO http request request_id=5eec7470-2c68-4c7b-ab4b-a13ff2bcd37e method=GET path=/api/realtime/ws status=400 latency=123.273µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:29:15 INFO http request request_id=a1bdcf22-c805-4b91-8af5-cc48776ff679 method=GET path=/api/stream/video status=206 latency=2.908796982s ip= user_agent=libmpv user_id=""
+2026/05/14 00:29:16 INFO http request request_id=0d772750-d027-4615-9dca-3ea7b9d7cd9f method=GET path=/api/stream/video status=206 latency=815.463218ms ip= user_agent=libmpv user_id=""
+2026/05/14 00:29:16 INFO http request request_id=627e29e2-7976-4f31-a4e7-886a1fc5d7c5 method=GET path=/api/stream/video status=206 latency=177.699902ms ip= user_agent=libmpv user_id=""
+2026/05/14 00:29:16 INFO http request request_id=d54eb0b9-b7fa-45d0-897a-8352e8f4e623 method=GET path=/api/stream/video status=206 latency=222.513573ms ip= user_agent=libmpv user_id=""
+2026/05/14 00:29:16 INFO http request request_id=d545659e-9023-4f7d-b429-6fa7025dd557 method=GET path=/api/stream/video status=206 latency=439.696115ms ip= user_agent=libmpv user_id=""
+2026/05/14 00:29:18 INFO http request request_id=9927c4cc-a52b-4f1c-a11d-af2bc109a62f method=GET path=/api/stream/video status=206 latency=1.411964652s ip= user_agent=libmpv user_id=""
+2026/05/14 00:29:20 INFO http request request_id=20c0d3fc-9f16-490d-8e73-a4952d46075c method=GET path=/api/stream/video status=206 latency=1.777336332s ip= user_agent=libmpv user_id=""
+2026/05/14 00:29:22 INFO http request request_id=2b64de9d-c50a-4507-892d-029bbaae02e2 method=GET path=/api/realtime/ws status=400 latency=84.138µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:29:30 INFO http request request_id=0631b8ce-fe35-48a6-853e-6ba8671939e8 method=GET path=/api/realtime/ws status=400 latency=116.481µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:29:36 INFO http request request_id=918a98c1-2e3a-4b75-ab49-4330e369a4c2 method=GET path=/api/realtime/ws status=400 latency=120.308µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:29:42 INFO http request request_id=70e3ee98-a121-4ca4-9dbf-3e805dd3e8e2 method=GET path=/api/realtime/ws status=400 latency=150.088µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:29:48 INFO http request request_id=8f03f8a4-3c21-4bea-bba6-33d7e91a92b3 method=GET path=/api/realtime/ws status=400 latency=133.313µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:29:56 INFO http request request_id=61142547-6317-4aca-9965-7d9930035cf4 method=GET path=/api/realtime/ws status=400 latency=141.425µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:30:03 INFO http request request_id=6e539f99-ac1c-449b-9830-f6a262042009 method=GET path=/api/realtime/ws status=400 latency=97.692µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:30:08 INFO http request request_id=3146bd6b-69fb-480a-8ab2-8b6dfa66e84b method=GET path=/api/realtime/ws status=400 latency=113.236µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:30:13 INFO http request request_id=8885de32-5f6e-417e-81be-2c5c72551179 method=GET path=/api/realtime/ws status=400 latency=124.059µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:30:21 INFO http request request_id=f2f76a7a-f17e-4c83-b574-facd9e6ef1ca method=GET path=/api/realtime/ws status=400 latency=113.689µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:30:29 INFO http request request_id=74094526-4929-4141-8dd7-0b632d14a83f method=GET path=/api/realtime/ws status=400 latency=132.377µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:30:29 INFO http request request_id=7ccc2322-f040-4244-b9b6-6b461000c41f method=GET path=/api/stream/video status=206 latency=1m9.928832865s ip= user_agent=libmpv user_id=""
+2026/05/14 00:30:36 INFO http request request_id=62cf9185-f704-4226-8de3-b60fba79fb43 method=GET path=/api/realtime/ws status=400 latency=108.362µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:30:39 INFO http request request_id=cf811b39-fcca-459f-b188-00c24c042df2 method=GET path=/api/fs/list status=200 latency=395.168µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:30:39 INFO http request request_id=d99141f3-53b8-4295-8b0a-6322b32077eb method=GET path=/api/fs/list status=200 latency=298.705µs ip= user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              2026/05/14 00:31:55 INFO http request request_id=bcbfd775-28a0-4713-89d3-81a2385386ff method=GET path=/api/realtime/ws status=400 latency=158.97µs ip=192.168.1.3 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=""
+2026/05/14 00:31:56 INFO http request request_id=f15bd96f-7153-42d7-9636-6e9d782fc3d6 method=GET path=/api/fs/list status=200 latency=329.907µs ip=192.168.1.3 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:31:56 INFO http request request_id=46d1bc15-6469-4c76-8443-9d135b1a1aaa method=GET path=/api/fs/list status=200 latency=287.305µs ip=192.168.1.3 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:31:57 INFO http request request_id=2c191f2a-6942-4ccc-bce8-97b7dffd18fb method=GET path=/api/fs/list status=200 latency=353.221µs ip=192.168.1.3 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa
+2026/05/14 00:31:58 INFO http request request_id=6b821a35-5da7-4af0-b707-1476270350bd method=GET path=/api/fs/list status=200 latency=399.745µs ip=192.168.1.3 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" user_id=3c4066c2-7561-49b5-8ba7-cdc61bc7c4aa

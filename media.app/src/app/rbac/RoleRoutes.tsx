@@ -8,14 +8,19 @@ import Landing from '../../features/static/pages/Landing/Landing';
 import Login from '../../features/auth/pages/LogIn/Login-new';
 import GoogleCallback from '../../features/auth/pages/GoogleCallback/GoogleCallback';
 import SignUp from '../../features/auth/pages/SignUp/SignUp';
+import AuthLayout from '../../shared/Layout/AuthLayout/AuthLayout';
 
 const RoleRoutes = (): React.ReactElement | null => {
   const isAuthenticated = useAppSelector(selectIsAuthenticated);
   return (
     !isAuthenticated ? <Routes>
       <Route path="*" element={<Navigate to="/login" />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
+      <Route path="" element={<AuthLayout />}>
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<SignUp />} />
+      </Route>
+      {/* <AuthLayout> */}
+      {/* </AuthLayout> */}
       <Route path="/oauth/google/callback" element={<GoogleCallback />} />
       <Route path="/" element={<Landing />} />
     </Routes> : <Routes>

@@ -24,28 +24,7 @@ const Login = () => {
 
   return (
     <div className={styles.section}>
-      <main>
-        <div className={styles.form}>
-          <h1>Brief <span>IQ</span></h1>
-          <div className={styles.fields}>
-            <div className={styles.col}>
-              <input type="email" placeholder="Enter your email..." value={email} onChange={(e) => setEmail(e.target.value)} />
-              <input type="password" placeholder="Enter your password..." value={password} onChange={(e) => setPassword(e.target.value)} />
-            </div>
-            <div className={styles.action}>
-              <div className={styles.btns}>
-                <div className={styles.btn} onClick={handleLogin}>
-                  <p>Login</p>
-                </div>
-                <div className={styles.googleBtn} onClick={handleGoogleLogin}>
-                  <p>Continue with Google</p>
-                </div>
-              </div>
-              <p>Need to create an account? <span onClick={() => navigate("/signup")}>Sign up</span></p>
-            </div>
-          </div>
-        </div>
-      </main>
+      
     </div>
   )
 }

@@ -6,6 +6,14 @@
   }
 }
 
+:root {
+  --primary: #3b82F6;
+  --secondary: #1e293b;
+  --tertiary: #0f172a;
+  --neutral: #94a3b8;
+  --bg: #051424;
+}
+
 html {
   height: 100dvh;
   width: 100vw;
